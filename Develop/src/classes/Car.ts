@@ -1,9 +1,10 @@
 // Importing Vehicle and Wheel classes
+import Driveable from '../interfaces/Driveable.js';
 import Vehicle from './Vehicle.js';
 import Wheel from './Wheel.js';
 
 // Car class that extends Vehicle class
-class Car extends Vehicle {
+class Car extends Vehicle implements Driveable {
   // Declare properties of the Car class
   vin: string;
   color: string;
