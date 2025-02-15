@@ -2,12 +2,12 @@
 class Wheel {
   // Declare properties of the Wheel class using private access modifier
   private diameter: number;
-  private tireBrand: string;
+  private Brand: string;
 
   // Constructor for the Wheel class
   constructor(diameter: number = 18, tireBrand: string = "GoodYear") {
     this.diameter = diameter;
-    this.tireBrand = tireBrand;
+    this.Brand = tireBrand;
   }
 
   // Getter methods for the properties of the Wheel class
@@ -17,7 +17,7 @@ class Wheel {
 
   // Setter method for the diameter property
   get getTireBrand(): string {
-    return this.tireBrand;
+    return this.Brand;
   }
 }
 

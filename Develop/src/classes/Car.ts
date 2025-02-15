@@ -14,6 +14,8 @@ class Car extends Vehicle implements Driveable {
   weight: number;
   topSpeed: number;
   wheels: Wheel[];
+  override started: boolean = false;
+  override currentSpeed: number = 0;
 
   // Constructor for the Car class
   constructor(
@@ -27,24 +29,40 @@ class Car extends Vehicle implements Driveable {
     wheels: Wheel[]
   ) {
     // Call the constructor of the parent class, Vehicle
-    super();
-
-    // Initialize properties of the Car class
-    this.vin = vin;
-    this.color = color;
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.weight = weight;
-    this.topSpeed = topSpeed;
-    // Check if the wheels array has 4 elements
-    // If not, create 4 new Wheel objects
-    // Otherwise, use the provided wheels array
+    super(vin, color, make, model, year, weight, topSpeed, wheels);
     if (wheels.length !== 4) {
       this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
     } else {
       this.wheels = wheels;
     }
+  }
+  override start(): void {
+    this.started = true;
+    console.log(`${this.make} ${this.model} started.`);
+  }
+
+  override accelerate(change: number): void {
+    this.currentSpeed += change;
+    console.log(`${this.make} ${this.model} accelerated to ${this.currentSpeed} MPH.`);
+  }
+
+  override decelerate(change: number): void {
+    this.currentSpeed -= change;
+    console.log(`${this.make} ${this.model} decelerated to ${this.currentSpeed} MPH.`);
+  }
+
+  override stop(): void {
+    this.currentSpeed = 0;
+    this.started = false;
+    console.log(`${this.make} ${this.model} stopped.`);
+  }
+
+  override turn(direction: string): void {
+    console.log(`${this.make} ${this.model} turned ${direction}.`);
+  }
+
+  override reverse(): void {
+    console.log(`${this.make} ${this.model} is reversing.`);
   }
 
   // Override the printDetails method from the Vehicle class
