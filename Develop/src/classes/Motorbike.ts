@@ -81,8 +81,8 @@ class Motorbike extends Vehicle implements Driveable {
 
   override printDetails(): void {
   super.printDetails();
-  console.log(`Front Wheel: ${this.wheels[0].brand} ${this.wheels[0].diameter}"`);
-  console.log(`Rear Wheel: ${this.wheels[1].brand} ${this.wheels[1].diameter}"`);
+  console.log(`Front Wheel: ${this.wheels[0].getTireBrand()} ${this.wheels[0].getDiameter()}"`);
+    console.log(`Rear Wheel: ${this.wheels[1].getTireBrand()} ${this.wheels[1].getDiameter()}"`);
 }
   // TODO: Override the printDetails method from the Vehicle class
   // TODO: The method should call the printDetails method of the parent class

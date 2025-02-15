@@ -11,12 +11,12 @@ class Wheel {
   }
 
   // Getter methods for the properties of the Wheel class
-  get getDiameter(): number {
+  getDiameter(): number {
     return this.diameter;
   }
 
   // Setter method for the diameter property
-  get getTireBrand(): string {
+  getTireBrand(): string {
     return this.brand;
   }
 }

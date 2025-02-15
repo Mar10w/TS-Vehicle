@@ -89,19 +89,20 @@ class Car extends Vehicle implements Driveable {
 
     // Print details of the wheels
     console.log(
-      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+      `Wheel 1: ${this.wheels[0].getDiameter()} inch with a ${this.wheels[0].getTireBrand()} tire`
     );
     console.log(
-      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+      `Wheel 2: ${this.wheels[1].getDiameter()} inch with a ${this.wheels[1].getTireBrand()} tire`
     );
     console.log(
-      `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
+      `Wheel 3: ${this.wheels[2].getDiameter()} inch with a ${this.wheels[2].getTireBrand()} tire`
     );
     console.log(
-      `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
+      `Wheel 4: ${this.wheels[3].getDiameter()} inch with a ${this.wheels[3].getTireBrand()} tire`
     );
   }
 }
+
 
 // Export the Car class as the default export
 export default Car;
