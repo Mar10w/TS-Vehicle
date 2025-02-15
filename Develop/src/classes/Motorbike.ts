@@ -26,15 +26,19 @@ class Motorbike extends Vehicle implements Driveable {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[];
+    wheels: Wheel[]
   ) {
-    super(vin, color, make, model, year, weight, topSpeed, wheels);
-    if (this.wheels.length !== 2) {
-      this.wheels = [new Wheel(), new Wheel()];
-    } else {
-      this.wheels = wheels;
-    }
+    super();
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.wheels = wheels.length === 2 ? wheels : [new Wheel(), new Wheel()];
   }
+
   // TODO: Create a constructor that accepts the properties of the Motorbike class
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     // TODO: The constructor should initialize the properties of the Motorbike class

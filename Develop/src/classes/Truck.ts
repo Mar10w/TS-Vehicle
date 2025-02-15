@@ -3,6 +3,8 @@ import Vehicle from './Vehicle.js';
 import Wheel from './Wheel.js';
 import AbleToTow from '../interfaces/AbleToTow.js';
 import Driveable from '../interfaces/Driveable.js';
+import Motorbike from './Motorbike.js';
+import Car from './Car.js';
 
 // TODO: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
 class Truck extends Vehicle implements Driveable, AbleToTow {
@@ -32,14 +34,18 @@ class Truck extends Vehicle implements Driveable, AbleToTow {
   wheels: Wheel[],
   towingCapacity: number
   ) {
-    super(vin, color, make, model, year, weight, topSpeed, wheels);
+    super();
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.wheels = wheels.length === 4 ? wheels : [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
     this.towingCapacity = towingCapacity;
-    if (this.wheels.length !== 4) {
-      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
-    } else {
-      this.wheels = wheels;
-    }
   }
+
   // TODO: Create a constructor that accepts the properties of the Truck class
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     // TODO: The constructor should initialize the properties of the Truck class
@@ -81,6 +87,11 @@ class Truck extends Vehicle implements Driveable, AbleToTow {
       console.log(`Vehicle is too heavy to be towed`);
     }
   }
+  
+  popWheelie(): void {
+    console.log(`${this.make} ${this.model} cannot safely pop a wheelie.`);
+  }
+
     // TODO: Get the make an model of the vehicle if it exists
     // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
     // TODO: If it is, log that the vehicle is being towed

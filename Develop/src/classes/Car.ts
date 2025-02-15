@@ -29,13 +29,17 @@ class Car extends Vehicle implements Driveable {
     wheels: Wheel[]
   ) {
     // Call the constructor of the parent class, Vehicle
-    super(vin, color, make, model, year, weight, topSpeed, wheels);
-    if (wheels.length !== 4) {
-      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
-    } else {
-      this.wheels = wheels;
-    }
+    super();
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.wheels = wheels.length === 4 ? wheels : [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
   }
+
   override start(): void {
     this.started = true;
     console.log(`${this.make} ${this.model} started.`);
@@ -63,6 +67,10 @@ class Car extends Vehicle implements Driveable {
 
   override reverse(): void {
     console.log(`${this.make} ${this.model} is reversing.`);
+  }
+ 
+  popWheelie(): void {
+    console.log(`${this.make} ${this.model} cannot safely pop a wheelie.`);
   }
 
   // Override the printDetails method from the Vehicle class
