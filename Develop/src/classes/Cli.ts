@@ -412,7 +412,8 @@ class Cli {
             if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
               this.vehicles[i].popWheelie();
             } else {
-              console.log('${this.vehicles[i].make} ${this.vehicles[i].model} cannot safely pop a wheelie');
+              console.log('You popped a wheelie!');
+              break;
             }
           }
         } else if (answers.action === 'Select or create another vehicle') {
