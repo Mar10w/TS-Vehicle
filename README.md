@@ -15,7 +15,8 @@
   
   ## Installation
   the program can be launched through terminal and accessed through my github.
-  
+  https://github.com/Mar10w/TS-Vehicle
+  youtube link: https://www.youtube.com/watch?v=hrylzm1VwyU
   ## Usage
   
   
